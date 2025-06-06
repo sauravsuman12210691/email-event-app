@@ -5,4 +5,4 @@ const { fetchEventEmails } = require('../controllers/emailController');
 // Route to get event emails, protected by auth middleware if needed
 router.get('/events', fetchEventEmails);
 
-module.exports = router;
+module.exports = router
