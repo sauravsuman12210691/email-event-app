@@ -41,7 +41,7 @@ export default function GoogleLoginFetchEmails() {
   useEffect(() => {
     if (!accessToken) return;
 
-    fetch('http://localhost:5000/api/email/events', {
+    fetch(`${import.meta.env.VITE_SERVER_DOMAIN}/api/email/events`, {
       headers: { Authorization: `Bearer ${accessToken}` },
     })
       .then(res => res.json())
@@ -54,7 +54,7 @@ export default function GoogleLoginFetchEmails() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-600 via-purple-700 to-pink-600 text-white flex flex-col items-center py-12 px-6">
-      <h1 className="text-4xl font-extrabold mb-8 drop-shadow-lg">Google OAuth + Gmail Emails</h1>
+      <h1 className="text-4xl font-extrabold mb-8 drop-shadow-lg">Emails</h1>
 
       {!accessToken && (
         <button

@@ -8,7 +8,7 @@ require("./passport");
 const emailRoutes = require('./routes/emailRoutes')
 
 const app = express();
-app.use(cors({ origin: process.env.CLIENT_URL, credentials: true }));
+app.options('*', cors({ origin: process.env.CLIENT_URL, credentials: true }));
 app.use(session({ secret: 'secret', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
